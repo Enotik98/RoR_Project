@@ -1,0 +1,15 @@
+<h2><%= t("page.edit_group") %></h2>
+<%= form_for :group, url: group_path(@group), method: :patch do |f| %>
+  <% if(@group.errors.any?) %>
+    <% @group.errors.full_messages.each do |msg| %>
+      <div class="alert alert-danger"><%= msg %></div>
+    <% end %>
+  <% end %>
+  <p>
+    <%= t("group.name") %><br>
+    <%= f.text_field(:Name, {:class => 'form-control'}) %>
+  </p>
+  <p>
+    <%= f.submit({:class => 'btn btn-success'}) %>
+  </p>
+<% end %>

@@ -1,0 +1,34 @@
+uk:
+  en: "Англіська"
+  uk: "Українська"
+  activerecord:
+    attributes:
+      group:
+        Name: 'Назва'
+      student:
+        Surname: 'Прізвище'
+        Street: 'Вулиця'
+        House: 'Будинок'
+        Flat: 'Квартира'
+
+  students:
+    surname: "Прізвище"
+    street: 'Вулиця'
+    house: 'Будинок'
+    flat: 'Квартира'
+  group:
+    name: "Назва групи"
+  page:
+    info: "Про"
+    edit: "Редагувати"
+    delete: "Видалити"
+    project: "Проект"
+    home: "Головна"
+    new_group: "Нова група"
+    new_student: "Новий студент"
+    all_student: "Список студентів"
+    all_groups: "Список груп"
+    edit_student: "Редагувати Студента"
+    edit_group: "Редагувати Групу"
+    create_group: "Створити групу"
+    sure: "Ви впевнені?"

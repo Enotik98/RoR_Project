@@ -1,0 +1,33 @@
+<h2>New Student</h2>
+<%= form_for :student, url: students_path do |f| %>
+  <% if(@student.errors.any?) %>
+    <% @student.errors.full_messages.each do |msg| %>
+      <div class="alert alert-danger"><%= msg %></div>
+    <% end %>
+  <% end %>
+
+  <p>
+    Name<br>
+    <%= f.text_field(:Surname, { :class => 'form-control' }) %>
+  </p>
+
+  <p>
+    Street<br>
+    <%= f.text_field(:Street, { :class => 'form-control' }) %>
+  </p>
+  <p>
+    House<br>
+    <%= f.text_field(:House, { :class => 'form-control' }) %>
+  </p>
+  <p>
+    Flat<br>
+    <%= f.text_field(:Flat, { :class => 'form-control' }) %>
+  </p>
+  <p>
+    GroupId<br>
+    <%= f.text_field(:group_id, { :class => 'form-control' }) %>
+  </p>
+  <p>
+    <%= f.submit({ :class => 'btn btn-success' }) %>
+  </p>
+<% end %>

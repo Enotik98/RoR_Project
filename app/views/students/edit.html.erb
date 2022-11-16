@@ -1,0 +1,29 @@
+<h2><%= t("page.edit_student") %></h2>
+<%= form_for :student, url: group_student_path(@student), method: :patch do |f| %>
+  <% if(@student.errors.any?) %>
+    <% @student.errors.full_messages.each do |msg| %>
+      <div class="alert alert-danger"><%= msg %></div>
+    <% end %>
+  <% end %>
+
+  <p>
+    <%= t("students.surname") %><br>
+    <%= f.text_field(:Surname, { :class => 'form-control' }) %>
+  </p>
+
+  <p>
+    <%= t("students.street") %><br>
+    <%= f.text_field(:Street, { :class => 'form-control' }) %>
+  </p>
+  <p>
+    <%= t("students.house") %><br>
+    <%= f.text_field(:House, { :class => 'form-control' }) %>
+  </p>
+  <p>
+    <%= t("students.flat") %><br>
+    <%= f.text_field(:Flat, { :class => 'form-control' }) %>
+  </p>
+  <p>
+    <%= f.submit({ :class => 'btn btn-success' }) %>
+  </p>
+<% end %>

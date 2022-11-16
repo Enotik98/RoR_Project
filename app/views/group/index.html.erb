@@ -1,0 +1,24 @@
+<h1><%= t("page.all_groups") %></h1>
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col"><%= t("group.name") %></th>
+    <th scope="col"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @group.each do |gr| %>
+    <tr>
+      <th scope="row"><%= gr.id %></th>
+      <td><%= gr.Name %></td>
+      <td><%= link_to t("page.info"), group_path(gr.id), :class => 'btn btn-outline-secondary' %>
+        <%= link_to t("page.edit"), edit_group_path(gr), :class => 'btn btn-outline-warning' %>
+        <%= link_to t("page.delete"), group_path(gr), method: :delete, data: { confirm: t("page.sure") }, :class => 'btn btn-outline-danger' %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<%= link_to t("page.create_group"), new_group_path, :class => 'float-end btn btn-success' %></td>
+

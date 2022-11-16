@@ -1,0 +1,64 @@
+<h1><%= @group.Name %>
+  <span class="float-end">
+    <%= link_to t("page.edit"), edit_group_path(@group), :class => 'btn btn-outline-warning' %>
+    <%= link_to t("page.delete"), group_path(@group), method: :delete, data: { confirm: t("page.sure") }, :class => 'btn btn-outline-danger' %>
+</span>
+</h1>
+<h4 class="mt-5"><%= t("page.all_student") %></h4>
+<table class="table mt-2 mb-5">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col"><%= t('students.surname') %></th>
+    <th scope="col"><%= t('students.flat') %></th>
+    <th scope="col"><%= t('students.house') %></th>
+    <th scope="col"><%= t('students.flat') %></th>
+    <th scope="col"></th>
+
+  </tr>
+  </thead>
+  <tbody>
+  <% @group.students.each do |st| %>
+    <tr>
+      <th scope="row"><%= st.id %></th>
+      <td><%= st.Surname %></td>
+      <td><%= st.Street %></td>
+      <td><%= st.House %></td>
+      <td><%= st.Flat %></td>
+      <td><%= link_to t("page.edit"), edit_group_student_path(st), :class => 'btn btn-outline-warning' %>
+        <%= link_to t("page.delete"), group_student_path(st), method: :delete, data: { confirm: t("page.sure") }, :class => 'btn btn-outline-danger' %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<h4 style="margin-top: 100px;"><%= t("page.new_student")%></h4>
+<th>
+<%= form_for([@group, @group.students.build]) do |f| %>
+  <% if (@student.errors.any?) %>
+    <% @student.errors.full_messages.each do |msg| %>
+      <div class="alert alert-danger"><%= msg %></div>
+    <% end %>
+  <% end %>
+
+  <p>
+    <%= t("students.surname")%><br>
+    <%= f.text_field(:Surname, { :class => 'form-control' }) %>
+  </p>
+
+  <p>
+    <%= t("students.street")%><br>
+    <%= f.text_field(:Street, { :class => 'form-control' }) %>
+  </p>
+  <p>
+    <%= t("students.house")%><br>
+    <%= f.text_field(:House, { :class => 'form-control' }) %>
+  </p>
+  <p>
+    <%= t("students.flat")%><br>
+    <%= f.text_field(:Flat, { :class => 'form-control' }) %>
+  </p>
+  <p>
+    <%= f.submit({ :class => 'btn btn-success' }) %>
+  </p>
+<% end %>
+    </th>
