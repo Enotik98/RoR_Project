@@ -1,4 +1,4 @@
-<h2>New Group</h2>
+<h2><%= t("page.new_group") %></h2>
 <%= form_for :group, url: group_index_path do |f| %>
   <% if(@group.errors.any?) %>
     <% @group.errors.full_messages.each do |msg| %>

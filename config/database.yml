@@ -13,20 +13,21 @@ default: &default
   adapter: mysql2
   encoding: utf8mb4
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: root
-  password: macro854
-  socket: /tmp/mysql.sock
+  username: doadmin
+  password: AVNS_iUtzWm-Ik6PlmLAbdgg
+  host: db-mysql-fra1-38418-do-user-12767457-0.b.db.ondigitalocean.com
+  port: 25060
 
 development:
   <<: *default
-  database: mydb
+  database: defaultdb
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: mydb
+  database: defaultdb
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -50,6 +51,6 @@ test:
 #
 production:
   <<: *default
-  database: mydb
-  username: root
+  database: defaultdb
+  username: defaultdb
   password: <%= ENV["UNTI_DATABASE_PASSWORD"] %>

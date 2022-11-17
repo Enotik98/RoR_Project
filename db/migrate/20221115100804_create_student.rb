@@ -1,11 +1,11 @@
 class CreateStudent < ActiveRecord::Migration[7.0]
   def change
-    create_table :Student do |t|
+    create_table :student do |t|
       t.string :Surname
       t.string :Street
       t.string :House
       t.string :Flat
-      t.integer :Class_id
+      t.integer :group_id
 
       t.timestamps
     end
